@@ -1,5 +1,5 @@
 {% set name = "wsgidav" %}
-{% set version = "4.2.0" %}
+{% set version = "4.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/WsgiDAV-{{ version }}.tar.gz
-  sha256: 8f1a8d80126702dc9c19423f946614ea0a1eb09e996327ed9c2f09062ee83abe
+  sha256: 9814bf0cd370046a4b1d7fecb7093d4c32c44fc689dc272e8e6d33a70a5960c5
 
 build:
   entry_points:
