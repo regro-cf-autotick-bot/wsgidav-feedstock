@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 5f0ad71bea72def3018b6ba52da3bcb83f61e0873c27225344582805d6e52b9e
 
 build:
@@ -14,14 +14,14 @@ build:
     - wsgidav = wsgidav.server.server_cli:run
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - defusedxml
     - jinja2
     - json5
@@ -35,6 +35,7 @@ test:
     - wsgidav --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mar10/wsgidav
